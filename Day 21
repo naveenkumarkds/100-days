@@ -1,0 +1,21 @@
+import java.util.Scanner;
+class Binary_Decimal
+{
+	public static void main(String[] args) 
+	{
+		Scanner input = new Scanner(System.in);
+		long bin, dec = 0, i = 1, rem;
+		System.out.print("Enter The Binary Number: ");
+		bin = input.nextLong();		
+		System.out.println("Binary Number: " + bin);
+		while (bin != 0) 
+		{
+			rem = bin % 10;
+			dec = dec + rem * i;
+			i = i * 2;
+			bin = bin / 10;
+		}
+		System.out.println("Decimal Number: " + dec);
+	}
+}
+ 
