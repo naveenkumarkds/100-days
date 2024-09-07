@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class RoundOff_Integer
+{
+	public static void main(String[] args)
+	{
+		Scanner input = new Scanner(System.in);
+		int tmp = 1;
+		int num = 0;
+		int i = 0;
+		System.out.printf("Enter the Number : ");
+		num = input.nextInt();
+ 
+		if (num > 0)
+		{
+			for (; tmp <= num >> 1;)
+			{
+				tmp = tmp << 1;
+			}
+			num = tmp;
+		}
+		else
+		{
+			num = ~num;
+			num = num + 1;
+			for (; tmp <= num >> 1;)
+			{
+				tmp = tmp << 1;
+			}
+			tmp = tmp << 1;
+			tmp = ~tmp;
+			tmp = tmp + 1;
+			num = tmp;
+		}
+		System.out.println("Result is : "+ num);
+	}
+}
