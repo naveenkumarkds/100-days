@@ -1,0 +1,20 @@
+public class MyClass {
+
+    public int publicField = 10;
+
+
+    public void publicMethod() {
+        System.out.println("This is a public method.");
+    }
+
+  
+    public static void main(String[] args) {
+      
+        MyClass myObject = new MyClass();
+
+        System.out.println("Public Field: " + myObject.publicField);
+
+      
+        myObject.publicMethod();
+    }
+}
