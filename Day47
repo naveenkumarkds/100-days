@@ -1,0 +1,28 @@
+s = input() 
+n = len(s)
+open_brackets = 0
+close_brackets = 0
+correct_shifts = 0
+
+
+for char in s:
+    if char == '(':
+        open_brackets += 1
+    else:
+        close_brackets += 1
+
+open_count = 0
+close_count = 0
+
+for i in range(n):
+    if s[i] == '(':
+        open_count += 1
+    else:
+        close_count += 1
+    
+    if open_count == close_count:
+        correct_shifts += 1
+        open_count = 0
+        close_count = 0
+
+print(correct_shifts)
