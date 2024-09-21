@@ -1,0 +1,21 @@
+def custom_sort(arr):
+    even_indices = sorted(arr[::2]) 
+    odd_indices = sorted(arr[1::2], reverse=True)
+    result = []
+    even_idx, odd_idx = 0, 0
+    for i in range(len(arr)):
+        if i % 2 == 0:
+            result.append(even_indices[even_idx])
+            even_idx += 1
+        else:
+            result.append(odd_indices[odd_idx])
+            odd_idx += 1
+    
+    return result
+
+n = int(input())
+arr = list(map(int, input().split()))
+
+
+sorted_arr = custom_sort(arr)
+print(*sorted_arr)
